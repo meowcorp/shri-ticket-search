@@ -1,0 +1,20 @@
+.text {
+    margin: 0;
+}
+
+.textTitle {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+@media (min-width: 1024px) {
+    .text-title {
+        font-size: 32px;
+    }
+
+    .text-subtitle {
+        font-size: 16px;
+    }
+}

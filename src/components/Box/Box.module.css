@@ -1,0 +1,5 @@
+.boxWrapper {
+    border-radius: var(--base-radius);
+    padding: var(--base-padding);
+    background-color: var(--light);
+}

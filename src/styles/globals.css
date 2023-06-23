@@ -1,0 +1,40 @@
+:root {
+  --text-primary: #1B1F23;
+  --gray-1: #333333;
+  --gray-5: #E0E0E0;
+  --orange: #FF5500;
+  --orange-hover: #E94E00;
+  --orange-disabled: #FFA375;
+
+  --background: #F5F5F5;
+  --icon-teriary: #999FA6;
+  --text-tertiary: #999FA6;
+  --light: #FFFFFF;
+  --border-default: #E1E3E6;
+  --base-radius: 8px;
+  --base-padding: 24px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
