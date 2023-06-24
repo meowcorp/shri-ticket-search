@@ -26,7 +26,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <footer className={styles.pageFooter}>
         <div className={cs(helpers.container, styles.pageFooter__container)}>
           <a href="">Вопросы-ответы</a>
-          <a href="">О нас</a>
+          <Link href="/about">О нас</Link>
         </div>
       </footer>
     </>
