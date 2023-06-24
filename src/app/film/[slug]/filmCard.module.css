@@ -1,0 +1,66 @@
+.filmCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.filmCard__image {
+    border-radius: var(--base-radius);
+    align-self: center;
+}
+
+.filmCard__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--base-padding);
+    margin-bottom: 24px;
+}
+
+.filmCard__subtitle {
+    font-size: 20px;
+    line-height: 32px;
+    margin-bottom: 16px;
+}
+
+.filmCard__fields {
+    margin-top: 0;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.filmCard__field dd {
+    margin: 0;
+    line-height: 24px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.filmCard__field dt {
+    font-weight: 600;
+    line-height: 24px;
+    font-size: 20px;
+}
+
+.filmCard__field {
+    display: flex;
+    gap: 8px;
+}
+
+.filmCard__description {
+    line-height: 24px;
+}
+
+@media (min-width: 1024px) {
+    .filmCard {
+        flex-direction: row;
+    }
+
+    .filmCard__heading {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

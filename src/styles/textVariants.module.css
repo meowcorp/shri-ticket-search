@@ -7,14 +7,19 @@
     font-weight: 700;
 }
 
+.textHeading {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 32px;
+}
 
 
 @media (min-width: 1024px) {
-    .text-title {
+    .textTitle {
         font-size: 32px;
     }
 
-    .text-subtitle {
+    .textSubtitle {
         font-size: 16px;
     }
 }
