@@ -1,8 +1,14 @@
 .quantityPicker {
     display: flex;
     gap: 8px;
+    align-items: center;
+}
+
+.quantityPicker path {
+    fill: var(--light)
 }
 
 .quantityPicker__quantity {
     font-weight: 600;
+    font-size: 20px;
 }
