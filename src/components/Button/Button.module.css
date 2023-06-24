@@ -31,11 +31,6 @@
     cursor: auto;
 }
 
-.button_disabled:active {
-    background-color: transparent;
-    color: var(--base-button-color)
-}
-
 .button_default_size {}
 
 .button_small_size {
