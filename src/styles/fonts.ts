@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 const roboto = Roboto({
   display: "swap",
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["400", "500", "700"],
 });
 
 const SFProText = localFont({
