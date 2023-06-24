@@ -35,12 +35,23 @@
 
 .filmCard__controls {
     display: flex;
-    align-items: center;
-    column-gap: 8px;
+    gap: 24px;
 }
 
-.filmCard__quantity {
+.filmCard__controls path {
+    fill: white;
+}
 
+
+.filmCard__deleteButton {
+    border: 0;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.filmCard__deleteButton path {
+    fill: var(--dark)
 }
 
 @media (min-width: 1024px) {
