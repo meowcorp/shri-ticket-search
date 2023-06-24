@@ -22,11 +22,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
           </Link>
         </div>
       </header>
-      <main className={styles.pageMain}>
-        <div className={cs(helpers.container, styles.pageMain__container)}>
-          {children}
-        </div>
-      </main>
+      <main className={styles.pageMain}>{children}</main>
       <footer className={styles.pageFooter}>
         <div className={cs(helpers.container, styles.pageFooter__container)}>
           <a href="">Вопросы-ответы</a>
