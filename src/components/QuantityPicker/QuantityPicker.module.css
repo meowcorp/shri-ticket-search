@@ -1,0 +1,8 @@
+.quantityPicker {
+    display: flex;
+    gap: 8px;
+}
+
+.quantityPicker__quantity {
+    font-weight: 600;
+}
