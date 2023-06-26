@@ -16,6 +16,10 @@
     width: 100px;
 }
 
+.filmCard__img img {
+    object-fit: cover;
+}
+
 .filmCard__title {
     font-weight: 700;
     line-height: 20px;
