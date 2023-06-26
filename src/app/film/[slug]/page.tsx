@@ -60,7 +60,7 @@ export default async function Film({ params }: Props) {
         <dl className={styles.filmCard__fields}>
           <div className={styles.filmCard__field}>
             <dt>Жанр:</dt>
-            <dd>{GenreLocalization[film.genre]}</dd>
+            <dd>{GenreLocalization[film.genre.toUpperCase()]}</dd>
           </div>
           <div className={styles.filmCard__field}>
             <dt>Год выпуска:</dt>
