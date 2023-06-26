@@ -4,6 +4,7 @@ import Layout from "@/components/Layout/Layout";
 
 import "../styles/globals.css";
 import { StoreProvider } from "@/store/StoreProvider";
+import TotalBadge from "./components/TotalBadge";
 
 export default function RootLayout({
   children,
@@ -13,10 +14,12 @@ export default function RootLayout({
   return (
     <html lang="ru" className={roboto.className}>
       <body>
-        <Layout>
-          <StoreProvider>{children}</StoreProvider>
+      <StoreProvider>
+        <Layout cartBadge={<TotalBadge />}>
+          {children}
         </Layout>
         <div id="reactPortalDropdown"></div>
+      </StoreProvider>
       </body>
     </html>
   );

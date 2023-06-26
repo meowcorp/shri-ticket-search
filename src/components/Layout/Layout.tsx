@@ -7,7 +7,12 @@ import helpers from "@/styles/helpers.module.css";
 import textVariants from "@/styles/textVariants.module.css";
 import Icon from "@/components/Icon/Icon";
 
-const Layout = ({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode;
+  cartBadge?: React.ReactNode;
+}
+
+const Layout = ({ children, cartBadge }: Props) => {
   return (
     <>
       <header className={styles.pageHeader}>
@@ -17,9 +22,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               Билетопоиск
             </Link>
           </h2>
-          <Link href="/" aria-label="Список покупок">
-            <Icon.ShoppingCart />
-          </Link>
+          <div className={styles.pageHeader__cartContainer}>
+            {cartBadge}
+            <Link href="/" aria-label="Список покупок">
+              <Icon.ShoppingCart />
+            </Link>
+          </div>
         </div>
       </header>
       <main className={styles.pageMain}>{children}</main>

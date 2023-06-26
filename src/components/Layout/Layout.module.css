@@ -13,6 +13,12 @@
     align-items: center;
 }
 
+.pageHeader__cartContainer {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
 .pageMain {
     flex-grow: 1;
 }
