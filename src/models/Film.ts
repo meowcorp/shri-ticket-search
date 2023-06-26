@@ -19,7 +19,7 @@ export interface FilmEntry {
   reviewIds: ReviewId[];
 }
 
-export const GenreLocalization = {
+export const GenreLocalization: Record<string, string> = {
   [FilmGenre.FANTASY]: "Фэнтези",
   [FilmGenre.HORROR]: "Хоррор",
   [FilmGenre.ACTION]: "Экшен",

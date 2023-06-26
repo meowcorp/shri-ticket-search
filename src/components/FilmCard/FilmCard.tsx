@@ -41,7 +41,7 @@ export default function FilmCard({
             <Link href={href}>{title}</Link>
           </h3>
           <i className={cn(textVariants.text, styles.filmCard__subTitle)}>
-            {GenreLocalization[genre] ?? ""}
+            {GenreLocalization[genre.toUpperCase()] ?? ""}
           </i>
         </div>
         <div className={styles.filmCard__controls}>
