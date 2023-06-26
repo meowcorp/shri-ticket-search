@@ -1,3 +1,10 @@
+.film {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
 .filmCard {
     display: flex;
     flex-direction: column;

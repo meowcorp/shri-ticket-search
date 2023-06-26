@@ -1,23 +1,48 @@
-"use client";
+import { FilmEntry, GenreLocalization } from "@/models/Film";
 
-import Image from "next/image";
+import { BASE_URL } from "@/store/features/cart/filmsApi";
+
+import { Review as ReviewModel, Review } from "@/models/Review";
+import ReviewBlock from "@/components/Review/Review";
 import cn from "classnames";
 
+import helpers from "@/styles/helpers.module.css";  
+import styles from "./page.module.css";
+
+import Image from "next/image";
+
 import BoxWrapper from "@/components/Box/Box";
-import { FilmEntry, GenreLocalization } from "@/models/Film";
-import QuantityPicker from "@/components/QuantityPicker/QuantityPicker";
 
 import textVariants from "@/styles/textVariants.module.css";
-import styles from "./filmCard.module.css";
+import FilmCardQuantity from "./filmCardQuantity";
 
 interface Props {
-  film: FilmEntry;
-  quantity: number;
+  params: { slug: string };
 }
 
-export default function FilmCard({ film, quantity }: Props) {
+async function getFilm (slug: string): Promise<FilmEntry> {
+  const film = await fetch(`${BASE_URL}/movie?movieId=${slug}`)
+  return film.json()
+}
+
+async function getReview (slug: string): Promise<Review[]> {
+  const film = await fetch(`${BASE_URL}/reviews?movieId=${slug}`)
+  return film.json()
+}
+
+export default async function Film({ params }: Props) {
+  const filmData = getFilm(params.slug);
+  const reviewData = getReview(params.slug)
+
+  const [film, reviews] = await Promise.all([filmData, reviewData])
+
+  const renderReviews = () => {
+    return reviews.map((review) => <ReviewBlock key={review.id} review={review} />)
+  }
+
   return (
-    <BoxWrapper className={styles.filmCard}>
+    <div className={cn(helpers.container, styles.film)}>
+      <BoxWrapper className={styles.filmCard}>
       <Image
         src={film.posterUrl}
         alt={film.title}
@@ -30,7 +55,7 @@ export default function FilmCard({ film, quantity }: Props) {
           <h2 className={cn(textVariants.text, textVariants.textHeading)}>
             {film.title}
           </h2>
-          <QuantityPicker quantity={quantity} />
+          <FilmCardQuantity film={film} />
         </div>
         <dl className={styles.filmCard__fields}>
           <div className={styles.filmCard__field}>
@@ -57,8 +82,10 @@ export default function FilmCard({ film, quantity }: Props) {
           <p className={cn(textVariants.text, styles.filmCard__description)}>
             {film.description}
           </p>
-        </div>
+        </div> 
       </div>
     </BoxWrapper>
+      {renderReviews()}
+    </div>
   );
 }

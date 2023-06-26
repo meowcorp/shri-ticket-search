@@ -1,15 +1,33 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { FilmEntry } from "@/models/Film";
+import { FilmEntry, FilmGenre } from "@/models/Film";
+
+export interface Filter {
+  name: string | null;
+  cinemaId: string | null;
+  genre: FilmGenre | null;
+}
+
+export interface CartItem extends FilmEntry {
+  quantity: number;
+}
 
 export interface CartState {
-  cart: FilmEntry[];
-  filteredCart: FilmEntry[];
+  items: FilmEntry[];
+  cartItems: CartItem[];
+  filter: Filter;
+  total: number;
 }
 
 const initialState: CartState = {
-  cart: [],
-  filteredCart: [],
+  items: [],
+  cartItems: [],
+  total: 0,
+  filter: {
+    genre: null,
+    name: null,
+    cinemaId: null,
+  },
 };
 
 export const cartSlice = createSlice({
@@ -17,11 +35,68 @@ export const cartSlice = createSlice({
   initialState: initialState,
   reducers: {
     addToCart: (state: CartState, action: PayloadAction<FilmEntry>) => {
-      state.cart.push(action.payload);
+      const cartEntity = state.cartItems.find(
+        ({ id }) => action.payload.id === id
+      );
+
+      if (cartEntity) {
+        cartEntity.quantity += 1;
+      } else {
+        state.cartItems.push({
+          quantity: 1,
+          ...action.payload,
+        });
+      }
+
+      state.total += 1;
     },
 
     removeFromCart(state: CartState, action: PayloadAction<FilmEntry>) {
-      state.cart = state.cart.filter(({ id }) => action.payload.id !== id);
+      const cartEntity = state.cartItems.find(
+        ({ id }) => action.payload.id === id
+      );
+
+      if (!cartEntity) return;
+
+      if (cartEntity.quantity === 1) {
+        state.cartItems = state.cartItems.filter((film) => film !== cartEntity);
+      } else {
+        cartEntity.quantity -= 1;
+      }
+
+      state.total -= 1;
+    },
+
+    changeCinemaFilter(
+      state: CartState,
+      action: PayloadAction<Filter["cinemaId"]>
+    ) {
+      state.filter.cinemaId = action.payload;
+    },
+
+    changeNameFilter(state: CartState, action: PayloadAction<Filter["name"]>) {
+      state.filter.name = action.payload;
+    },
+
+    changeGenreFilter(
+      state: CartState,
+      action: PayloadAction<Filter["genre"]>
+    ) {
+      state.filter.genre = action.payload;
     },
   },
 });
+
+export const {
+  addToCart,
+  removeFromCart,
+  changeCinemaFilter,
+  changeNameFilter,
+  changeGenreFilter,
+} = cartSlice.actions;
+
+export type CartSlice = {
+  cart: CartState;
+};
+
+export default cartSlice.reducer;
