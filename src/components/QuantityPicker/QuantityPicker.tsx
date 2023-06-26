@@ -13,6 +13,8 @@ export enum FILM_QUANTITY_CHANGE {
 
 export interface QuantityChangeProps {
   quantity: number;
+  min?: number;
+  max?: number;
   onChangeQuantity?: ((type: FILM_QUANTITY_CHANGE) => void) | undefined;
 }
 
@@ -23,6 +25,8 @@ interface Props extends QuantityChangeProps {
 
 export default function QuantityPicker({
   quantity = 0,
+  min = 0,
+  max = 30,
   onChangeQuantity,
 }: Props) {
   return (
@@ -30,7 +34,7 @@ export default function QuantityPicker({
       <Button
         variant="icon"
         size="small"
-        disabled={quantity <= 0}
+        disabled={quantity <= min}
         onClick={() => onChangeQuantity?.(FILM_QUANTITY_CHANGE.DELETE)}
       >
         <Icon.Minus />
@@ -39,6 +43,7 @@ export default function QuantityPicker({
       <Button
         variant="icon"
         size="small"
+        disabled={quantity >= max}
         onClick={() => onChangeQuantity?.(FILM_QUANTITY_CHANGE.ADD)}
       >
         <Icon.Plus />
