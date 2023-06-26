@@ -73,11 +73,12 @@ export const cartSlice = createSlice({
       state: CartState,
       action: PayloadAction<FilmEntry>
     ) {
-      state.cartItems = state.cartItems.filter(
-        ({ id }) => action.payload.id !== id
+      const cartEntity = state.cartItems.find(
+        ({ id }) => action.payload.id === id
       );
 
-      state.total = 0;
+      state.total -= cartEntity ? cartEntity.quantity : 0;
+      state.cartItems = state.cartItems.filter((item) => item !== cartEntity);
     },
 
     changeCinemaFilter(
