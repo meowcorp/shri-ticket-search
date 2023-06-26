@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
 import { FilmEntry, FilmGenre } from "@/models/Film";
+import { useDispatch, useSelector } from "react-redux";
+import { useCallback } from "react";
 
 export interface Filter {
   name: string | null;
@@ -86,6 +88,26 @@ export const cartSlice = createSlice({
     },
   },
 });
+
+export const useFilmQuantity = (film: FilmEntry) => {
+  const quantity = useSelector<CartSlice, number>((state) => {
+    const cartItem = state.cart.cartItems.find(({ id }) => id === film.id);
+    return cartItem ? cartItem.quantity : 0;
+  });
+
+  const dispatch = useDispatch();
+
+  const incQuantity = useCallback(
+    () => dispatch(addToCart(film)),
+    [film, dispatch]
+  );
+  const decQuantity = useCallback(
+    () => dispatch(removeFromCart(film)),
+    [film, dispatch]
+  );
+
+  return { quantity, incQuantity, decQuantity };
+};
 
 export const {
   addToCart,

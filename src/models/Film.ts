@@ -1,10 +1,10 @@
 import { ReviewId } from "@/models/Review";
 
 export enum FilmGenre {
-  FANTASY = "fantasy",
-  HORROR = "horror",
-  ACTION = "action",
-  COMEDY = "comedy",
+  FANTASY = "FANTASY",
+  HORROR = "HORROR",
+  ACTION = "ACTION",
+  COMEDY = "COMEDY",
 }
 
 export interface FilmEntry {
