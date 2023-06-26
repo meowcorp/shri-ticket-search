@@ -32,6 +32,8 @@ export default function FilmList() {
   const renderFilms = () => {
     if (!data) return null;
 
+    if (data.length === 0) return <div>Билетов нет :(</div>;
+
     return data.map((film) => <FilmEntity key={film.id} film={film} />);
   };
 
