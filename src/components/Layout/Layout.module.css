@@ -21,6 +21,11 @@
 
 .pageMain {
   flex-grow: 1;
+  display: flex;
+}
+
+.pageMain__wrapper {
+  width: 100%;
 }
 
 .pageFooter {

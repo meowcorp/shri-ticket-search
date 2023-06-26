@@ -30,7 +30,9 @@ const Layout = ({ children, cartBadge }: Props) => {
           </div>
         </div>
       </header>
-      <main className={styles.pageMain}>{children}</main>
+      <main className={styles.pageMain}>
+        <div className={styles.pageMain__wrapper}>{children}</div>
+      </main>
       <footer className={styles.pageFooter}>
         <div className={cs(helpers.container, styles.pageFooter__container)}>
           <Link href="/qa">Вопросы-ответы</Link>
