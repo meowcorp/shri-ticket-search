@@ -13,14 +13,14 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const cinemaRequest = await fetch(`${BASE_URL}/cinemas`)
-  const cinemas: Cinema[] = await cinemaRequest.json()
+  const cinemaRequest = await fetch(`${BASE_URL}/cinemas`);
+  const cinemas: Cinema[] = await cinemaRequest.json();
 
   return (
     <div className={cn(helpers.container, styles.pageContainer)}>
       <h1 className={helpers.visuallyHidden}>Главная</h1>
       <aside className={styles.pageAside}>
-        <Filter cinemas={cinemas}/>
+        <Filter cinemas={cinemas} />
       </aside>
       <article className={styles.pageMain}>
         <FilmList />

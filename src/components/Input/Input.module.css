@@ -1,35 +1,33 @@
 .input {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input__label {
-    line-height: 20px;
-    font-size: 17px;
-    margin-bottom: 4px;
+  line-height: 20px;
+  font-size: 17px;
+  margin-bottom: 4px;
 }
 
-
 .input__nativeInput {
-    font-size: 14px;
-    line-height: 20px;
-    padding: 10px 16px;
-    color: var(--text-primary);
-    border-radius: var(--base-radius);
-    border: 1px solid var(--border-default)
+  font-size: 14px;
+  line-height: 20px;
+  padding: 10px 16px;
+  color: var(--text-primary);
+  border-radius: var(--base-radius);
+  border: 1px solid var(--border-default);
 }
 
 .input__nativeInput::placeholder {
-    color: var(--text-tertiary);
+  color: var(--text-tertiary);
 }
 
 .input__nativeInput:focus-visible {
-    outline: var(--orange) 1px solid;
+  outline: var(--orange) 1px solid;
 }
 
-
 @media (min-width: 1024px) {
-    .input__label {
-        font-size: 14px;
-    }
+  .input__label {
+    font-size: 14px;
+  }
 }

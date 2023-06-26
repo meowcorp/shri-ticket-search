@@ -1,14 +1,14 @@
 .quantityPicker {
-    display: flex;
-    gap: 8px;
-    align-items: center;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .quantityPicker path {
-    fill: var(--light)
+  fill: var(--light);
 }
 
 .quantityPicker__quantity {
-    font-weight: 600;
-    font-size: 20px;
+  font-weight: 600;
+  font-size: 20px;
 }

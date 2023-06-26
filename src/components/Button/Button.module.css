@@ -1,48 +1,49 @@
 .button {
-    --base-button-color: var(--orange);
+  --base-button-color: var(--orange);
 
-    background-color: var(--base-button-color);
-    color: var(--light);
-    border-radius: var(--base-radius);
-    font-size: 14px;
-    line-height: 20px;
-    text-align: center;
-    padding: 8px 16px;
-    font-weight: 500;
-    border: 0;
-    font-family: inherit;
-    cursor: pointer;
-    transition: color, background-color ease-in-out .2s;
+  background-color: var(--base-button-color);
+  color: var(--light);
+  border-radius: var(--base-radius);
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  padding: 8px 16px;
+  font-weight: 500;
+  border: 0;
+  font-family: inherit;
+  cursor: pointer;
+  transition: color, background-color ease-in-out 0.2s;
 }
 
 .button_outline {
-    border: 1px solid var(--base-button-color);
-    color: var(--base-button-color);
-    background-color: transparent;
+  border: 1px solid var(--base-button-color);
+  color: var(--base-button-color);
+  background-color: transparent;
 }
 
 .button_outline:active {
-    background-color: var(--base-button-color);
-    color: var(--light)
+  background-color: var(--base-button-color);
+  color: var(--light);
 }
 
 .button_disabled {
-    --base-button-color: var(--orange-disabled);
-    cursor: auto;
+  --base-button-color: var(--orange-disabled);
+  cursor: auto;
 }
 
-.button_default_size {}
+.button_default_size {
+}
 
 .button_small_size {
-    --base-radius: 4px;
+  --base-radius: 4px;
 
-    height: 20px;
-    width: 20px;
+  height: 20px;
+  width: 20px;
 }
 
 .button_icon {
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

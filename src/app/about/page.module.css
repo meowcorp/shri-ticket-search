@@ -1,12 +1,12 @@
 .aboutPage {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .aboutPage__text {
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0;
 }

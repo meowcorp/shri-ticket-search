@@ -32,9 +32,7 @@ export default function FilmList() {
   const renderFilms = () => {
     if (!data) return null;
 
-    return data.map((film) => (
-      <FilmEntity key={film.id} film={film} />
-    ));
+    return data.map((film) => <FilmEntity key={film.id} film={film} />);
   };
 
   if (error) return <div>Ошибка</div>;

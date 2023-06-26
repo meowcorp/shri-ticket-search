@@ -14,13 +14,11 @@ export default function RootLayout({
   return (
     <html lang="ru" className={roboto.className}>
       <body>
-      <StoreProvider>
-        <Layout cartBadge={<TotalBadge />}>
-          {children}
-        </Layout>
-        <div id="reactPortalDropdown"></div>
-        <div id="reactPortalModal"></div>
-      </StoreProvider>
+        <StoreProvider>
+          <Layout cartBadge={<TotalBadge />}>{children}</Layout>
+          <div id="reactPortalDropdown"></div>
+          <div id="reactPortalModal"></div>
+        </StoreProvider>
       </body>
     </html>
   );

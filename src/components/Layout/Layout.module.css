@@ -1,48 +1,48 @@
 .pageHeader {
-    background-color: var(--gray-1);
-    color: var(--light);
-    position: sticky;
-    top: 0;
-    z-index: 5;
+  background-color: var(--gray-1);
+  color: var(--light);
+  position: sticky;
+  top: 0;
+  z-index: 5;
 }
 
 .pageHeader__container {
-    padding: 24px 19px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  padding: 24px 19px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .pageHeader__cartContainer {
-    display: flex;
-    gap: 14px;
-    align-items: center;
+  display: flex;
+  gap: 14px;
+  align-items: center;
 }
 
 .pageMain {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .pageFooter {
-    background-color: var(--gray-1);
-    color: var(--light);
-    font-size: 20px;
+  background-color: var(--gray-1);
+  color: var(--light);
+  font-size: 20px;
 }
 
 .pageFooter__container {
-    padding: var(--base-padding);
-    display: flex;
-    justify-content: space-between;
+  padding: var(--base-padding);
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (min-width: 1024px) {
-    .mainContainer {
-        flex-direction: row;
-        column-gap: 23px;
-    }
+  .mainContainer {
+    flex-direction: row;
+    column-gap: 23px;
+  }
 
-    .pageMain__container {
-        flex-direction: row;
-        column-gap: 23px;
-    }
+  .pageMain__container {
+    flex-direction: row;
+    column-gap: 23px;
+  }
 }

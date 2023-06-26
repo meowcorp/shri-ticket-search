@@ -5,7 +5,7 @@ import BoxWrapper from "@/components/Box/Box";
 import styles from "./page.module.css";
 import cn from "classnames";
 
-import Total from './total'
+import Total from "./total";
 
 export const metadata: Metadata = {
   title: "О нас",
