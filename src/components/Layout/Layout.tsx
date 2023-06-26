@@ -24,7 +24,7 @@ const Layout = ({ children, cartBadge }: Props) => {
           </h2>
           <div className={styles.pageHeader__cartContainer}>
             {cartBadge}
-            <Link href="/" aria-label="Список покупок">
+            <Link href="/cart" aria-label="Список покупок">
               <Icon.ShoppingCart />
             </Link>
           </div>

@@ -19,6 +19,7 @@ export default function RootLayout({
           {children}
         </Layout>
         <div id="reactPortalDropdown"></div>
+        <div id="reactPortalModal"></div>
       </StoreProvider>
       </body>
     </html>

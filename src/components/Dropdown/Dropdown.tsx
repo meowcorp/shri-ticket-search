@@ -9,8 +9,8 @@ import { SFProText } from "@/fonts";
 import styles from "./Dropdown.module.css";
 import Icon from "@/components/Icon/Icon";
 
-interface DropdownItem {
-  value: string | number;
+export interface DropdownItem {
+  value: any;
   label: string;
 }
 
@@ -38,7 +38,7 @@ const Dropdown = forwardRef<HTMLDivElement, Props>(function Dropdown(
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [isOpen]);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Dropdown = forwardRef<HTMLDivElement, Props>(function Dropdown(
   const renderDropdown = () => {
     if (!dropdownRef.current) return null;
 
-    const pos = dropdownRef.current.getBoundingClientRect();
+    const pos = dropdownRef.current!.getBoundingClientRect();
 
     return (
       <ul

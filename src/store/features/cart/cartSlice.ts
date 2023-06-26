@@ -69,6 +69,17 @@ export const cartSlice = createSlice({
       state.total -= 1;
     },
 
+    deleteAllQuantityFromCart(
+      state: CartState,
+      action: PayloadAction<FilmEntry>
+    ) {
+      state.cartItems = state.cartItems.filter(
+        ({ id }) => action.payload.id !== id
+      );
+
+      state.total = 0;
+    },
+
     changeCinemaFilter(
       state: CartState,
       action: PayloadAction<Filter["cinemaId"]>
@@ -121,6 +132,7 @@ export const {
   changeCinemaFilter,
   changeNameFilter,
   changeGenreFilter,
+  deleteAllQuantityFromCart,
 } = cartSlice.actions;
 
 export type CartSlice = {
