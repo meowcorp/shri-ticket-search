@@ -1,0 +1,33 @@
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.modal__title {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal__close {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.modal__description {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+}
+
+.modal__buttons {
+    display: flex;
+    gap: 8px;
+}
