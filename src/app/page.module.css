@@ -1,0 +1,29 @@
+.pageMain {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    flex-grow: 1;
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    padding: var(--base-padding);
+    row-gap: 20px;
+    flex: 1;
+}
+
+
+@media (min-width: 1024px) {
+    .pageAside {
+        width: 408px;
+        height: 862px;
+        position: sticky;
+        top: 108px; /* padding(24px) + header height(84px) */
+    }
+
+    .pageContainer {
+        flex-direction: row;
+        column-gap: 23px;
+    }
+}

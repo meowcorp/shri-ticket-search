@@ -15,18 +15,7 @@ export const filmsApi = createApi({
         },
       }),
     }),
-    getCinema: builder.query<Cinema[], void>({
-      query: () => "cinemas",
-    }),
-    getFilm: builder.query<FilmEntry, string>({
-      query: (filmId) => ({
-        url: "movie",
-        params: {
-          movieId: filmId,
-        },
-      }),
-    }),
   }),
 });
 
-export const { useGetFilmsQuery, useGetCinemaQuery } = filmsApi;
+export const { useGetFilmsQuery } = filmsApi;
