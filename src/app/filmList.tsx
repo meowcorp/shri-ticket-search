@@ -1,12 +1,8 @@
 "use client";
 
-import FilmCard from "@/components/FilmCard/FilmCard";
-
-import { FilmEntry, FilmGenre } from "@/models/Film";
 import { useSelector } from "react-redux";
 import { useGetFilmsQuery } from "@/store/features/cart/filmsApi";
 import { CartState, CartSlice } from "@/store/features/cart/cartSlice";
-import { useGetCinemaQuery } from "@/store/features/cart/filmsApi";
 import FilmEntity from "./components/FilmEntity";
 
 export default function FilmList() {
@@ -14,9 +10,7 @@ export default function FilmList() {
     ({ cart }) => cart.filter
   );
 
-  const {data: cinemaData} = useGetCinemaQuery()
-
-  const { data, error, isLoading } = useGetFilmsQuery(undefined, {
+  const { data, error, isLoading } = useGetFilmsQuery(filter.cinemaId, {
     selectFromResult: ({ data, ...rest }) => ({
       data: data
         ?.filter(({ title }) => {
@@ -30,20 +24,10 @@ export default function FilmList() {
           if (!filter.genre) return true;
 
           return genre === filter.genre;
-        })
-        .filter(({id}) => {
-          if (!filter.cinemaId) return true;
-
-          const cinema = cinemaData?.find(({id}) => filter.cinemaId === id)
-          if (!cinema) return true;
-
-          return cinema.movieIds.includes(id)
         }),
       ...rest,
     }),
   });
-
-
 
   const renderFilms = () => {
     if (!data) return null;

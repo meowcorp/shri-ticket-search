@@ -7,8 +7,13 @@ export const BASE_URL = "http://localhost:3001/api";
 export const filmsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: BASE_URL }),
   endpoints: (builder) => ({
-    getFilms: builder.query<FilmEntry[], void>({
-      query: () => "movies",
+    getFilms: builder.query<FilmEntry[], Cinema["id"] | undefined | null>({
+      query: (id) => ({
+        url: "movies",
+        params: {
+          cinemaId: id,
+        },
+      }),
     }),
     getCinema: builder.query<Cinema[], void>({
       query: () => "cinemas",
