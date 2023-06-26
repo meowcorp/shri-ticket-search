@@ -1,0 +1,17 @@
+.badge {
+    padding: 0 6px;
+    height: 28px;
+    min-width: 28px;
+    border-radius: var(--base-radius);
+    background-color: var(--orange);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge__value {
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+}
