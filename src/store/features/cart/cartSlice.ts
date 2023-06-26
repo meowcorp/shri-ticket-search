@@ -109,6 +109,12 @@ export const useFilmQuantity = (film: FilmEntry) => {
   return { quantity, incQuantity, decQuantity };
 };
 
+export const useTotal = () => {
+  const total = useSelector<CartSlice, number>((state) => state.cart.total);
+
+  return total;
+};
+
 export const {
   addToCart,
   removeFromCart,
