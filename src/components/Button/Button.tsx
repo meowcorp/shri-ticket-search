@@ -25,7 +25,7 @@ const buttonSizesClasses: Record<ButtonSizes, string> = {
 export default function Button({
   children,
   className,
-  variant = "default",
+  variant,
   size = "default",
   disabled,
   ...rest
@@ -34,11 +34,12 @@ export default function Button({
     <button
       className={cn(
         styles.button,
-        buttonVariantsClasses[variant],
+        variant && buttonVariantsClasses[variant],
         buttonSizesClasses[size],
         { [styles.button_disabled]: disabled },
         className
       )}
+      disabled={disabled}
       {...rest}
     >
       {children}
