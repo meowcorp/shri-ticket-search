@@ -24,7 +24,7 @@ interface AccordionProps {
 type changeIndexFn = (newIndex: number) => void;
 
 const AccordionContext = createContext<number>(-1);
-const AccordionChangeContext = createContext<changeIndexFn>(null);
+const AccordionChangeContext = createContext<changeIndexFn | null>(null);
 
 const Accordion = ({ children }: AccordionProps) => {
   const [currentIndex, setCurrentIndex] = useState(-1);
@@ -57,7 +57,9 @@ export function AccordionItem({
   const isOpen = currentIndex === index;
 
   const onHeadingClick = () => {
-    setCurrentIndex(index);
+    if (setCurrentIndex) {
+      setCurrentIndex(index);
+    }
   };
 
   return (

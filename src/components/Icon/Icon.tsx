@@ -1,12 +1,14 @@
-import React from "react";
+import React, { Attributes, HTMLAttributes, SVGProps } from "react";
 
 const Icon = () => {};
 
-Icon.DropdownTop = function DropdownTop(props) {
+type SVGComponentProps = HTMLAttributes<SVGElement> & {width?: number, height?: number}
+
+Icon.DropdownTop = function DropdownTop({width = 20, height = 20, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="20"
-      height="20"
+      width={width}
+      height={height}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -22,11 +24,11 @@ Icon.DropdownTop = function DropdownTop(props) {
   );
 };
 
-Icon.DropdownBottom = function DropdownBottom(props) {
+Icon.DropdownBottom = function DropdownBottom({width = 20, height = 20, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="20"
-      height="20"
+      width={width}
+      height={height}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -42,11 +44,11 @@ Icon.DropdownBottom = function DropdownBottom(props) {
   );
 };
 
-Icon.ShoppingCart = function ShoppingCart(props) {
+Icon.ShoppingCart = function ShoppingCart({width = 32, height = 32, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="32"
-      height="32"
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -60,11 +62,11 @@ Icon.ShoppingCart = function ShoppingCart(props) {
   );
 };
 
-Icon.Plus = function Add(props) {
+Icon.Plus = function Add({width = 32, height = 32, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="32"
-      height="32"
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -78,11 +80,11 @@ Icon.Plus = function Add(props) {
   );
 };
 
-Icon.Minus = function Add(props) {
+Icon.Minus = function Add({width = 32, height = 32, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="32"
-      height="32"
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -96,11 +98,11 @@ Icon.Minus = function Add(props) {
   );
 };
 
-Icon.Remove = function Remove(props) {
+Icon.Remove = function Remove({width = 20, height = 20, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="20"
-      height="20"
+      width={width}
+      height={height}
       viewBox="0 0 20 20"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -114,11 +116,11 @@ Icon.Remove = function Remove(props) {
   );
 };
 
-Icon.Image = function Image(props) {
+Icon.Image = function Image({width = 32, height = 32, ...props}: SVGComponentProps) {
   return (
     <svg
-      width="32"
-      height="32"
+      width={width}
+      height={height}
       viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

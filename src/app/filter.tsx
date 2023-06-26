@@ -7,7 +7,7 @@ import styles from "./filter.module.css";
 import textVariants from "@/styles/textVariants.module.css";
 import Dropdown from "@/components/Dropdown/Dropdown";
 import BoxWrapper from "@/components/Box/Box";
-import { Cinema } from "@/models/Cinema";
+import type { Cinema } from "@/models/Cinema";
 import { useDispatch, useSelector } from "react-redux";
 import { changeCinemaFilter, type CartState, CartSlice, changeGenreFilter, changeNameFilter } from "@/store/features/cart/cartSlice";
 import { FilmGenre, GenreLocalization } from "@/models/Film";

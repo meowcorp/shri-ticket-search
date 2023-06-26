@@ -5,7 +5,7 @@ import cn from "classnames";
 import styles from "./page.module.css";
 import helpers from "@/styles/helpers.module.css";
 import FilmList from "@/app/filmList";
-import { BASE_URL, useGetCinemaQuery } from "@/store/features/cart/filmsApi";
+import { BASE_URL } from "@/store/features/cart/filmsApi";
 import { Cinema } from "@/models/Cinema";
 
 export const metadata: Metadata = {
