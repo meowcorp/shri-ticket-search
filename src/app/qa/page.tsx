@@ -6,6 +6,11 @@ import React from "react";
 import BoxWrapper from "@/components/Box/Box";
 
 import styles from "./page.module.css";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Вопрос-ответ",
+};
 
 export default function QA() {
   return (

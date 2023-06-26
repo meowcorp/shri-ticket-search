@@ -8,7 +8,7 @@ import cn from "classnames";
 import Total from "./total";
 
 export const metadata: Metadata = {
-  title: "О нас",
+  title: "Корзина",
 };
 
 export default function Cart() {

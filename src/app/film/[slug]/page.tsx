@@ -15,6 +15,7 @@ import BoxWrapper from "@/components/Box/Box";
 
 import textVariants from "@/styles/textVariants.module.css";
 import FilmCardQuantity from "./filmCardQuantity";
+import { Metadata } from "next";
 
 interface Props {
   params: { slug: string };
@@ -28,6 +29,14 @@ async function getFilm(slug: string): Promise<FilmEntry> {
 async function getReview(slug: string): Promise<Review[]> {
   const film = await fetch(`${BASE_URL}/reviews?movieId=${slug}`);
   return film.json();
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const film = await getFilm(params.slug);
+
+  return {
+    title: film.title,
+  };
 }
 
 export default async function Film({ params }: Props) {
